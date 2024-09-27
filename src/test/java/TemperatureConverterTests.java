@@ -40,4 +40,16 @@ public class TemperatureConverterTests {
         // Testi lämpötila 60°C, joka on äärimmäinen
         assertTrue(converter.isExtremeTemperature(60));
     }
+
+    @Test
+    public void testKelvinToFahrenheit() {
+        // Test 300.1 K → 80.51 °F
+        assertEquals(80.51, converter.kelvinToFah(300.1), 0.001);
+        // Test 273.15 K → 32.0 °F (Freezing point of water)
+        assertEquals(32.0, converter.kelvinToFah(273.15), 0.001);
+        // Test 0 K → -459.67 °F (Absolute zero)
+        assertEquals(-459.67, converter.kelvinToFah(0), 0.001);
+    }
+
+
 }
